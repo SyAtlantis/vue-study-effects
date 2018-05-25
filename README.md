@@ -1,6 +1,6 @@
 # my-prj1
 
-> study css
+> study special effects
 
 ## Build Setup
 
