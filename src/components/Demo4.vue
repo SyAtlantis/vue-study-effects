@@ -1,0 +1,71 @@
+<template>
+  <div class="demo4">
+    <div class="box">BUTTON</div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Demo4',
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<style scoped lang="less">
+.demo4{
+  height: 600px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: skyblue;
+
+  .box{
+    background: linear-gradient(to right,gold,darkorange);
+    color: white;
+    --width:250px;
+    --height:calc(var(--width)/3);
+    width:var(--width);
+    height: var(--height);
+    text-align: center;
+    line-height: var(--height);
+    font-size: calc(var(--height)/2.5);
+    font-family: sans-serif;
+    letter-spacing: 0.2em;
+    border: 1px solid darkgoldenrod;
+    border-radius: 2em;
+
+    transform: perspective(500px) rotateY(-15deg);
+    text-shadow: 6px 3px 2px rgba(0, 0, 0, .2);
+    box-shadow: 2px 0 0 5px rgba(0, 0, 0, .2);
+
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+
+    &:hover{
+      transform: perspective(500px) rotateY(15deg);
+      text-shadow: -6px 3px 2px rgba(0, 0, 0, .2);
+      box-shadow: -2px 0 0 5px rgba(0, 0, 0, .2);
+
+      &::before{
+        left: 100%;
+      }
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right,transparent,white,transparent);
+      left: 0;
+      left: -100%;
+      transition: 0.5s;
+
+    }
+  }
+}
+</style>
