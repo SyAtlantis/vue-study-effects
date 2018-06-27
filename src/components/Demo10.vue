@@ -1,0 +1,107 @@
+<template>
+  <div class="demo10">
+    <div class="circle"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Demo10',
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<style scoped lang="less">
+.demo10,.circle{
+  height: 600px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+
+  .circle{
+    height: 100%;
+    width: 10em;
+    height: 10em;
+    border-width: 0.4em;
+    border-style: solid;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: red;
+    border-bottom-color: blue;
+
+    position: relative;
+    animation: animate 4s ease-in-out infinite alternate;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 75%;
+      height: 75%;
+      border-width: 0.4em;
+      border-style: solid;
+      border-radius: 50%;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top-color: orange;
+      border-bottom-color: cyan;
+
+      animation: animate 8s ease-in-out infinite alternate;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      border-width: 0.4em;
+      border-style: solid;
+      border-radius: 50%;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top-color: yellow;
+      border-bottom-color: limegreen;
+
+      animation: animate 16s ease-in-out infinite alternate;
+    }
+  }
+}
+@keyframes animate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(1440deg);
+  }
+  
+}
+@media screen and (mix-width: 1201px) {
+  .demo10{
+    width: 900px;
+    height: 600px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .demo10{
+    width: 600px;
+    height: 600px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .demo10{
+    width: 600px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .demo10{
+    width: 300px;
+    height: 300px;
+  }
+}
+</style>
